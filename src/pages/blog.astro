@@ -1,17 +1,14 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+const pageTitle = "My Astro Learning Blog";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<title>{pageTitle}</title>
 	</head>
+
 	<body>
-		<Header />
 		<main>
 			<h1>My Astro Blog</h1>
 
@@ -30,6 +27,5 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
             </ul>
 	
 		</main>
-		<Footer />
 	</body>
 </html>
