@@ -4,7 +4,9 @@ import Footer from '../components/footer.astro';
 import Navigation from "../components/navigation.astro";
 import Header from '../components/header.astro';
 import Menu from '../components/Menu.astro';
+import BlogPost from '../components/blogpost.astro';
 
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 const pageTitle = "My Astro Learning Blog";
 ---
 
@@ -25,9 +27,8 @@ const pageTitle = "My Astro Learning Blog";
 			<p>Blog</p>
 
 			<ul>
-				<li><a href="/posts/post1/">Post 1</a></li>
-				<li><a href="/posts/post2/">Post 2</a></li>
-				<li><a href="/posts/post3/">Post 3</a></li>
+				        {allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+
 			</ul>
 		</main>
 		<Footer />
