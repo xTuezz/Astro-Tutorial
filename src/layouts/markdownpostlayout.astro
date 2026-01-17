@@ -1,6 +1,6 @@
 ---
-import BaseLayout from './baselayout.astro';
-const { frontmatter } = Astro.props;
+import BaseLayout from './Cbaselayout.astro'; // importa a layout 
+const { frontmatter } = Astro.props;  // vai buscar frontmatter
 ---
 <BaseLayout pageTitle={frontmatter.title}>
   <p><em>{frontmatter.description}</em></p>
@@ -18,6 +18,9 @@ const { frontmatter } = Astro.props;
 
   <slot />
 </BaseLayout>
+
+
+
 <style>
   a {
     color: #00539F;
@@ -36,4 +39,4 @@ const { frontmatter } = Astro.props;
     font-size: 1.15em;
     background-color: #F8FCFD;
   }
-</style>
+</style> <!-- um estilo -->

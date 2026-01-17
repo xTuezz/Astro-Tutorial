@@ -1,0 +1,21 @@
+---
+import Menu from './Cmenu.astro';
+import Navigation from './Cnavigation.astro'; 
+import ThemeIcon from './Cthemeicon.astro'; // importa componentes
+---
+<header>
+  <nav>
+    <div>
+      <ThemeIcon />
+      <Menu />
+    </div>
+    <Navigation />
+  </nav>
+</header> <!-- simplesmente cria o header usando os componentes, para ser mais acessível -->
+
+<style>
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+</style> <!-- apenas um estilo -->
