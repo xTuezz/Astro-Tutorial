@@ -1,7 +1,7 @@
 ---
-import BaseLayout from '../../layouts/baselayout.astro';
-const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
-const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+import BaseLayout from '../../layouts/Cbaselayout.astro';
+const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true })); // importa todos os posts
+const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())]; // importa todas as tags, junta-as num unico array e filtra para nao haver repetidas
 const pageTitle = "Tag Index";
 ---
 <BaseLayout pageTitle={pageTitle}>
@@ -9,8 +9,10 @@ const pageTitle = "Tag Index";
     {tags.map((tag) => (
       <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
     ))}
-  </div>
+  </div> <!-- faz um loop nas tags e cria links para as tags -->
 </BaseLayout>
+
+
 <style>
   a {
     color: #00539F;
@@ -29,4 +31,4 @@ const pageTitle = "Tag Index";
     font-size: 1.15em;
     background-color: #F8FCFD;
   }
-</style>
+</style> <!-- estilo -->
