@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/Cbaselayout.astro';
+import BaseLayout from '../../layouts/baselayout.astro';
 const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true })); // importa todos os posts
 const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())]; // importa todas as tags, junta-as num unico array e filtra para nao haver repetidas
 const pageTitle = "Tag Index";

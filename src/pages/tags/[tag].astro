@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../../layouts/Cbaselayout.astro';
-import BlogPost from '../../components/Cblogpost.astro'; // importar de novo
+import BaseLayout from '../../layouts/baselayout.astro';
+import BlogPost from '../../components/blogpost.astro'; // importar de novo
 
 export async function getStaticPaths() {
   const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true })); // gets all posts
